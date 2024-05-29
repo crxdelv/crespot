@@ -53,6 +53,14 @@ Market are used to determine if the object is available. Markets are strings tha
 
 *Spotify chose ES as the default value. It's not my fault.*
 
+#### `search(str: query, str or list: type=['artist', 'album', 'track'], int: page=0) -> dict` <kbd>:globe_with_meridians:</kbd>
+
+This method is used to search for objects.
+
+`type` argument specifies which objects you are looking for. The valid values are `artist`, `album`, `track`, `playlist`, `show`, `episode`, `audiobook`, and `chapter`. For example, `type='track'` only returns tracks.
+
+`page` is how you control the parameter limit and offset. The limit is `20` and cannot be 
+
 #### static `create_token() -> str`
 
 This method creates a temporary access token that can be used at anything.
@@ -67,3 +75,7 @@ This method updates the current token. This is useful for regenerating the token
 #### `get_genre_seeds() -> list(str)` <kbd>:globe_with_meridians:</kbd>
 
 This method returns a list of recommended genre seeds.
+
+#### `get_markets() -> list(str)` <kbd>:globe_with_meridians:</kbd>
+
+This method returns a list of available markets.
