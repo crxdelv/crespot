@@ -31,10 +31,10 @@ crespot has 20 classes, including all the snippets:
 1. [`Track`](/crespot/single/track)
 2. [`Artist`](/crespot/single/artist)
 3. [`Album`](/crespot/group/album)
-4. `Show`
-5. `Episode`
-6. `Audiobook`
-7. `Chapter`
+4. [`Show`](/crespot/group/show)
+5. [`Episode`](/crespot/single/episode)
+6. [`Audiobook`](/crespot/group/audiobook)
+7. [`Chapter`](/crespot/single/chapter)
 
 These classes have their own corresponding snippet. For example, the class `Track` has its own snippet named `TrackSnippet` and its also a class.
 
@@ -48,11 +48,11 @@ This object is special as it doesn't have its own snippet and it has track infor
 
 #### Detail objects
 
-1. `Identification` &ndash; This class contains the external identification of the track.
-2. `Image` &ndash; This class contains the size and the source url of an image.
-3. `Owner` &ndash; This class contains the information of the playlist's owner.
-4. `TrackInfo` &ndash; This class contains the information that the track has inside the playlist. For example, it includes who added the track to the partylist.
-5. `Copyright` &ndash; This class contains the copyright information of the object.
+1. [`Identification`](/crespot/detail/identification) &ndash; This class contains the external identification of the track.
+2. [`Image`](/crespot/detail/image) &ndash; This class contains the width <kbd>Nullable</kbd>, the height <kbd>Nullable</kbd>, and the source url of an image.
+3. [`Owner`](/crespot/detail/owner) &ndash; This class contains the information of the playlist's owner.
+4. [`TrackInfo`](/crespot/detail/trackinfo) &ndash; This class contains the information that the track has inside the playlist. For example, it includes who added the track to the partylist.
+5. [`Copyright`](/crespot/detail/copyright) &ndash; This class contains the copyright information of the object.
 
 ### Methods
 
