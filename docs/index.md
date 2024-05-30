@@ -1,7 +1,6 @@
 <h3 align="center">crespot</h3>
 <p align="center">A python wrapper for Spotify API with no required authentication. :musical_note:</p>
 
-
 ### :key: Must-read informations
 
 1. `User` object is not included as it lacks of usage due to the unauthenticated access.
@@ -17,6 +16,12 @@
 
 ### :book: What is crespot?
 crespot is basically a python wrapper for spotify's web api. The greatest thing about crespot is it allows you to access spotify without any access token.
+
+### :building_construction: Constructor
+
+```python
+CreSpot(str: token, str: market='ES')
+```
 
 ### :nesting_dolls: Classes
 crespot has 20 classes, including all the snippets:
