@@ -1,6 +1,6 @@
 <h3 align="center"><code>Artist</code> <kbd>Object</kbd></h3>
 
-An `Artist` object contains 6 properties. (excluding `_market` and `_token`)
+An `Artist` object contains 6 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`ArtistSnippet`](/crespot/snippet/artist)
 
 ### `str: id`
 This is the ID of the artist.
@@ -19,3 +19,7 @@ This is the genre list of the artist.
 
 ### `list(Image): images`
 This is the profile images of the artist on Spotify.
+
+### Related links
+
+- [`Image`](/crespot/snippet/image)
