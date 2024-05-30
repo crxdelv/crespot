@@ -24,7 +24,7 @@ This is the total amount of followers of the playlist.
 This is the name of the playlist.
 
 ### `int: total`
-This is the total amount of tracks in the playlist.
+This is the total amount of tracks/episodes in the playlist.
 
 ### `str: snapshot`
 This is the version identifier of the current playlist's version.
