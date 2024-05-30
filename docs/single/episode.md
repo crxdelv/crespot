@@ -30,16 +30,24 @@ This is the milliseconds duration of the episode.
 ### `str: date`
 This is the first release date of the album. The format is `yyyy-mm-dd`.
 
+### `str: preview` <kbd>Nullable</kbd>
+This is the audio preview url of the track.
+
+### `bool: explicit`
+This is true if the track is explicit.
+
+### `bool: available`
+This is set to true if the track is available to the given market.
+
 ### `str: type`
 This is the media type of the show.
 
 ### `str: publisher`
 This is the publisher of the show.
 
-
+### `ShowSnippet: show`
+This is the snippet show of the episode.
 
 ### Related links
 
-- [`Copyright`](/crespot/detail/copyright)
-- [`EpisodeSnippet`](/crespot/snippet/episode)
-- [`Image`](/crespot/detail/image)
+- [`ShowSnippet`](/crespot/snippet/show)
