@@ -1,6 +1,6 @@
 <h3 align="center"><code>Playlist</code> <kbd>Object</kbd></h3>
 
-A `Playlist` object contains 12 properties. (excluding `_market` and `_token`)
+A `Playlist` object contains 12 properties (excluding `_market` and `_token`).
 
 ### `str: id`
 This is the ID of the album.
@@ -34,3 +34,9 @@ This is a list of track informations of the playlist.
 
 ### `list(Image): images`
 This is the artwork images of the playlist.
+
+### Related links
+
+- [`Owner`](/crespot/detail/owner)
+- [`TrackInfo`](/crespot/detail/trackinfo)
+- [`Image`](/crespot/detail/image)
