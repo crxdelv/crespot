@@ -20,6 +20,9 @@ This is the popularity score of the album.
 ### `int: total`
 This is the total amount of tracks in the albums.
 
+### `str: name`
+This is the name of the album.
+
 ### `list(str): genres`
 This is the genre list of the artist.
 
