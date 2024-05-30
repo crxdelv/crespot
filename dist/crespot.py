@@ -386,6 +386,7 @@ class CreSpot:
       self._market = market
       self.description = data['description']
       self.html_description = data['html_description']
+      self.external = data['external_urls']['spotify']
       if 'available_markets' in data: self.markets = data['available_markets']
       self.duration = data['duration_ms']
       self.explicit = data['explicit']
