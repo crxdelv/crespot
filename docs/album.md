@@ -23,8 +23,17 @@ This is the total amount of tracks in the albums.
 ### `str: name`
 This is the name of the album.
 
-### `list(str): genres`
-This is the genre list of the artist.
+### `str: date`
+This is the first release date of the album. The format is `yyyy-mm-dd`.
+
+### `list(str): market` <kbd>Undefinable</kbd>
+This is the list of available markets of the album.
+
+### `list(ArtistSnippet): artists`
+This is a list of snippet artists of the album.
+
+### `list(TrackSnippet): tracks`
+This is a list of snippet tracks of the album.
 
 ### `list(Image): images`
-This is the profile images of the artist on Spotify.
+This is the artwork images of the album.
