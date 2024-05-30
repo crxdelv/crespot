@@ -40,3 +40,9 @@ This is the audio preview url of the track.
 
 ### `list(ArtistSnippet): artists`
 This is a list of snippet artists of the track.
+
+### Related links
+
+- [`ArtistSnippet`](/crespot/snippet/artist)
+- [`AlbumSnippet`](/crespot/snippet/album)
+- [`Identifications`](/crespot/detail/identification)
