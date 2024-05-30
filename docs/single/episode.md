@@ -1,11 +1,10 @@
-<!-- :thedocss: allow-access false -->
 <!-- :thedocss: remove blockquote:first-child -->
 
 > This document is available on [**thedocss**](https://thedocss.vercel.app/crespot/single/episode). :sparkles:
 
 <h3 align="center"><code>Episode</code> <kbd>Object</kbd></h3>
 
-A `Show` object contains 12 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`EpisodeSnippet`](/crespot/snippet/episode).
+A `Episode` object contains 12 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`EpisodeSnippet`](/crespot/snippet/episode).
 
 ### `str: id`
 This is the ID of the episode.
@@ -23,7 +22,7 @@ This is the episode's page url of Spotify's website.
 This is the list of available markets of the episode.
 
 ### `str: name`
-This is the name of the show.
+This is the name of the episode.
 
 ### `int: duration`
 This is the milliseconds duration of the episode.
