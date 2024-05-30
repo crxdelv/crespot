@@ -1,6 +1,6 @@
 <h3 align="center"><code>Show</code> <kbd>Object</kbd></h3>
 
-A `Show` object contains 12 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`ShowSnippet`](/crespot/snippet/show)
+A `Show` object contains 12 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`ShowSnippet`](/crespot/snippet/show).
 
 ### `str: id`
 This is the ID of the show.
