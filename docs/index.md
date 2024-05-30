@@ -42,7 +42,7 @@ Therefore, the total classes of that list is 14.
 
 #### Special object
 
-1. `Playlist`
+1. [`Playlist`](/crespot/group/playlist)
 
 This object is special as it doesn't have its own snippet and it has track informations.
 
