@@ -1,3 +1,7 @@
+<!-- :thedocss: remove blockquote:first-child -->
+
+> This document is available on [**thedocss**](https://thedocss.vercel.app/crespot/single/artist). :sparkles:
+
 <h3 align="center"><code>Artist</code> <kbd>Object</kbd></h3>
 
 An `Artist` object contains 6 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`ArtistSnippet`](/crespot/snippet/artist)
