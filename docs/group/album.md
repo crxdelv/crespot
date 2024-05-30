@@ -1,6 +1,6 @@
 <h3 align="center"><code>Album</code> <kbd>Object</kbd></h3>
 
-An `Album` object contains 6 properties. (excluding `_market` and `_token`)
+An `Album` object contains 12 properties. (excluding `_market` and `_token`)
 
 ### `str: id`
 This is the ID of the album.
