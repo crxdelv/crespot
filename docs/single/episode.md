@@ -9,16 +9,13 @@ This is the ID of the episode.
 This is the description of the episode.
 
 ### `str: html_description` <kbd>Nullable</kbd>
-This is the HTML-formatted description of the episode..
+This is the HTML-formatted description of the episode.
 
 ### `str: external`
 This is the episode's page url of Spotify's website.
 
-### `list(Copyright): copyrights`
-This is a list of copyright informations of the show.
-
 ### `list(str): markets` <kbd>Undefinable</kbd>
-This is the list of available markets of the show.
+This is the list of available markets of the episode.
 
 ### `str: name`
 This is the name of the show.
