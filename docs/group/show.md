@@ -1,3 +1,7 @@
+<!-- :thedocss: remove blockquote:first-child -->
+
+> This document is available on [**thedocss**](https://thedocss.vercel.app/crespot/group/show). :sparkles:
+
 <h3 align="center"><code>Show</code> <kbd>Object</kbd></h3>
 
 A `Show` object contains 12 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`ShowSnippet`](/crespot/snippet/show).
