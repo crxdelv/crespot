@@ -101,7 +101,7 @@ class CreSpot:
       self.name = data['name']
       self.date = data['release_date']
       self.artists = CreSpot._iter(data['artists'], CreSpot.ArtistSnippet, token, market)
-      if 'available_markets' in data: self.market = data['available_markets']
+      if 'available_markets' in data: self.markets = data['available_markets']
       self.external = data['external_urls']['spotify']
       self.images = CreSpot._iter(data['images'], CreSpot.Image, token, market)
     
@@ -125,7 +125,7 @@ class CreSpot:
       self._market = market
       self.description = data['description']
       self.html_description = data['html_description']
-      if 'available_markets' in data: self.market = data['available_markets']
+      if 'available_markets' in data: self.markets = data['available_markets']
       self.duration = data['duration_ms']
       self.number = data['chapter_number']
       self.explicit = data['explicit']
@@ -154,7 +154,7 @@ class CreSpot:
       self._token = token
       self._market = market
       self.id = data['id']
-      if 'available_markets' in data: self.market = data['available_markets']
+      if 'available_markets' in data: self.markets = data['available_markets']
       self.description = data['description']
       self.html_description = data['html_description']
       self.copyrights = CreSpot._iter(data['copyrights'], CreSpot.Copyright, token, market)
@@ -184,7 +184,7 @@ class CreSpot:
       self._market = market
       self.description = data['description']
       self.html_description = data['html_description']
-      if 'available_markets' in data: self.market = data['available_markets']
+      if 'available_markets' in data: self.markets = data['available_markets']
       self.duration = data['duration_ms']
       self.explicit = data['explicit']
       self.available = data['is_playable']
@@ -260,7 +260,7 @@ class CreSpot:
       self._token = token
       self._market = market
       self.id = data['id']
-      if 'available_markets' in data: self.market = data['available_markets']
+      if 'available_markets' in data: self.markets = data['available_markets']
       self.description = data['description']
       self.html_description = data['html_description']
       self.copyrights = CreSpot._iter(data['copyrights'], CreSpot.Copyright, token, market)
@@ -297,7 +297,7 @@ class CreSpot:
       self.description = data['description']
       self.html_description = data['html_description']
       self.copyrights = CreSpot._iter(data['copyrights'], CreSpot.Copyright, token, market)
-      if 'available_markets' in data: self.market = data['available_markets']
+      if 'available_markets' in data: self.markets = data['available_markets']
       self.external = data['external_urls']['spotify']
       self.images = CreSpot._iter(data['images'], CreSpot.Image, token, market)
       self.name = data['name']
@@ -317,7 +317,7 @@ class CreSpot:
       self._token = token
       self._market = market
       self.id = data['id']
-      if 'available_markets' in data: self.market = data['available_markets']
+      if 'available_markets' in data: self.markets = data['available_markets']
       self.description = data['description']
       self.html_description = data['html_description']
       self.copyrights = CreSpot._iter(data['copyrights'], CreSpot.Copyright, token, market)
@@ -366,7 +366,7 @@ class CreSpot:
       self.name = data['name']
       self.date = data['release_date']
       self.artists = CreSpot._iter(data['artists'], CreSpot.ArtistSnippet, token, market)
-      if 'available_markets' in data: self.market = data['available_markets']
+      if 'available_markets' in data: self.markets = data['available_markets']
       self.external = data['external_urls']['spotify']
       self.tracks = CreSpot._iter(data['tracks']['items'], CreSpot.TrackSnippet, token, market)
       self.images = CreSpot._iter(data['images'], CreSpot.Image, token, market)
@@ -386,7 +386,7 @@ class CreSpot:
       self._market = market
       self.description = data['description']
       self.html_description = data['html_description']
-      if 'available_markets' in data: self.market = data['available_markets']
+      if 'available_markets' in data: self.markets = data['available_markets']
       self.duration = data['duration_ms']
       self.explicit = data['explicit']
       self.available = data['is_playable']
@@ -409,7 +409,7 @@ class CreSpot:
       self._market = market
       self.description = data['description']
       self.html_description = data['html_description']
-      if 'available_markets' in data: self.market = data['available_markets']
+      if 'available_markets' in data: self.markets = data['available_markets']
       self.duration = data['duration_ms']
       self.number = data['chapter_number']
       self.explicit = data['explicit']
