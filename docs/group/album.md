@@ -26,7 +26,7 @@ This is the name of the album.
 ### `str: date`
 This is the first release date of the album. The format is `yyyy-mm-dd`.
 
-### `list(str): market` <kbd>Undefinable</kbd>
+### `list(str): markets` <kbd>Undefinable</kbd>
 This is the list of available markets of the album.
 
 ### `list(ArtistSnippet): artists`
