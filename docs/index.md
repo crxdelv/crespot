@@ -8,6 +8,7 @@
 3. `User` object is not included as it lacks of usage due to the unauthenticated access.
 4. Every snippets have the method `get_real` that returns a non-snippet class instance.
 5. <kbd>:globe_with_meridians:</kbd> badge signifies that the method uses http request(s).
+6. Some properties are not added, such as `href` and `uri`.
 
 ### :book: What is crespot?
 crespot is basically a python wrapper for spotify's web api. The greatest thing about crespot is it allows you to access spotify without any access token.
