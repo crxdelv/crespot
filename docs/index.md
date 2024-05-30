@@ -17,7 +17,7 @@ crespot has 20 classes, including all the snippets:
 
 #### Objects
 
-1. [`Track`](/track)
+1. [`Track`](track)
 2. `Artist`
 3. `Album`
 4. `Show`
