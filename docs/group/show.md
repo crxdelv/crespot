@@ -29,8 +29,11 @@ This is the total amount of episodes in the episodes.
 ### `str: type`
 This is the media type of the show.
 
-### `list(TrackInfo): tracks`
-This is a list of track informations of the playlist.
+### `str: publisher`
+This is the publisher of the show.
+
+### `list(EpisodeSnippet): episodes`
+This is a list of snippet episodes of the show.
 
 ### `list(Image): images`
 This is the artwork images of the playlist.
