@@ -1,3 +1,7 @@
+<!-- :thedocss: remove blockquote:first-child -->
+
+> This document is available on [**thedocss**](https://thedocss.vercel.app/crespot/group/album). :sparkles:
+
 <h3 align="center"><code>Album</code> <kbd>Object</kbd></h3>
 
 An `Album` object contains 12 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`AlbumSnippet`](/crespot/snippet/album).
