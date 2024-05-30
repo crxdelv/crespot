@@ -304,7 +304,7 @@ class CreSpot:
       self.publisher = data['publisher']
       self.total = data['total_episodes']
       self.type = data['media_type']
-      self.episodes = CreSpot._iter(data['episodes']['items'], CreSpot.Episode, token, market)
+      self.episodes = CreSpot._iter(data['episodes']['items'], CreSpot.EpisodeSnippet, token, market)
      
     def __str__(self):
       return f'Show: {self.name} - {self.publisher}'
