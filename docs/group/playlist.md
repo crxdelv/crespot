@@ -1,6 +1,6 @@
 <!-- :thedocss: remove blockquote:first-child -->
 
-> This document is available on [**thedocss**](https://thedocss.vercel.app/crespot/group/album). :sparkles:
+> This document is available on [**thedocss**](https://thedocss.vercel.app/crespot/group/playlist). :sparkles:
 
 <h3 align="center"><code>Playlist</code> <kbd>Object</kbd></h3>
 
