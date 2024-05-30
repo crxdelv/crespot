@@ -3,7 +3,7 @@
 A `Playlist` object contains 12 properties (excluding `_market` and `_token`).
 
 ### `str: id`
-This is the ID of the album.
+This is the ID of the playlist.
 
 ### `bool: collaborative`
 This is set to true if the playlist allow public collaboration.
