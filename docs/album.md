@@ -9,16 +9,16 @@ This is the ID of the album.
 This is the label name of the album.
 
 ### `str: type`
-This is the album type. It can be `single` or `album`.
+This is the album type. It can be an `single`, `album`, or `compilation`.
 
 ### `str: external`
-This is the artist's page url of Spotify's website.
+This is the albums's page url of Spotify's website.
 
 ### `int: popularity`
-This is the popularity score of the artist.
+This is the popularity score of the album.
 
-### `int: followers`
-This is the amount of the artist's followers on Spotify.
+### `int: total`
+This is the total amount of tracks in the albums.
 
 ### `list(str): genres`
 This is the genre list of the artist.
