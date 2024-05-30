@@ -5,6 +5,8 @@ class CreSpot:
   _market = 'ES'
   _version = 1
   
+  # Detail objects
+  
   class Error(Exception):
     def __init__(self, req):
       self.error = req.status_code
@@ -19,7 +21,105 @@ class CreSpot:
     def __repr__(self):
       return self.__str__()
   
-  class Episode:
+  class Identifications:
+    def __init__(self, data, token, market):
+      self._token = token
+      self._market = market
+      self.isrc = data['isrc'] if 'isrc' in data else None
+      self.ean = data['ean'] if 'ean' in data else None
+      self.upc = data['upc'] if 'upc' in data else None
+    
+    def __str__(self):
+      avail = []
+      if 'isrc' in self: avail.append('isrc')
+      if 'ean' in self: avail.append('ean')
+      if 'upc' in self: avail.append('upc')
+      avail = ', '.join(avail)
+      if len(avail) == 0: avail = 'None'
+      return f'Identification: {avail}'
+    
+    def __repr__(self):
+      return self.__str__()
+  
+  class TrackInfo:
+    def __init__(self, data, token, market):
+      self._token = token
+      self._market = market
+      self.local = data['local']
+      if 'added_by' in data: self.owner = CreSpot.Owner(data['added_by'], token, market)
+      if 'added_at' in data: self.date = data['added_at']
+      if self.track['type'] == 'episode':
+        self.track = CreSpot.Episode(data['track'], token, market)
+      else:
+        self.track = CreSpot.Track(data['track'], token, market)
+  
+  class Owner:
+    def __init__(self, data, token, market):
+      self._token = token
+      self._market = market
+      self.external = data['external_urls']['spotify']
+      self.followers = data['followers']['total']
+      self.id = data['id']
+      if 'name' in data: self.name = data['display_name']
+  
+  class Image:
+    def __init__(self, data, token, market):
+      self._token = token
+      self._market = market
+      self.width = data['width']
+      self.height = data['height']
+      self.url = data['url']
+    
+    def __str__(self):
+      return f'Image: {self.width}x{self.height}'
+    
+    def __repr__(self):
+      return self.__str__()
+  
+  class Copyright:
+    def __init__(self, data, token, market):
+      self._token = token
+      self._market = market
+      self.text = data['text']
+      self.type = data['type']
+    
+    def __str__(self):
+      return f'Copyright: ({self.type}) {self.text}'
+    
+    def __repr__(self):
+      return self.__str__()
+  
+  # Snippet objects
+  
+  class AlbumSnippet:
+    def __init__(self, data, token, market):
+      self._token = token
+      self._market = market
+      self.id = data['id']
+      self.type = data['album_type']
+      self.total = data['total_tracks']
+      self.name = data['name']
+      self.date = data['release_date']
+      self.artists = CreSpot._iter(data['artists'], CreSpot.ArtistSnippet, token, market)
+      if 'available_markets' in data: self.market = data['available_markets']
+      self.external = data['external_urls']['spotify']
+      self.images = CreSpot._iter(data['images'], CreSpot.Image, token, market)
+    
+    def __str__(self):
+      artists = ', '.join([x.name for x in self.artists])
+      return f'AlbumSnippet: {self.name} - {artists}'
+    
+    def __repr__(self):
+      return self.__str__()
+    
+    def get_real(self):
+      _h = { 'Authorization': 'Bearer ' + self._token }
+      req = requests.get(f'https://api.spotify.com/v1/albums/{self.id}?market={self._market}', headers=_h)
+      if req.status_code > 399: raise CreSpot.Error(req)
+      res = json.loads(req.text)
+      return CreSpot.Album(res, self._token, self._market)
+  
+  class ChapterSnippet:
     def __init__(self, data, token, market):
       self._token = token
       self._market = market
@@ -27,20 +127,56 @@ class CreSpot:
       self.html_description = data['html_description']
       if 'available_markets' in data: self.market = data['available_markets']
       self.duration = data['duration_ms']
+      self.number = data['chapter_number']
       self.explicit = data['explicit']
       self.available = data['is_playable']
       self.languages = data['languages']
       self.name = data['name']
+      self.preview = data['audio_preview_url']
       self.date = data['release_date']
       self.id = data['id']
-      self.preview = data['audio_preview_url']
-      self.show = CreSpot.ShowSnippet(data['show'], token, market)
-    
+      
     def __str__(self):
-      return f'Episode: {self.name} - {self.show.name}'
+      return f'ChapterSnippet: {self.name}'
     
     def __repr__(self):
       return self.__str__()
+    
+    def get_real(self):
+      _h = { 'Authorization': 'Bearer ' + self._token }
+      req = requests.get(f'https://api.spotify.com/v1/chapters/{self.id}?market={self._market}', headers=_h)
+      if req.status_code > 399: raise CreSpot.Error(req)
+      res = json.loads(req.text)
+      return CreSpot.Chapter(res, self._token, self._market)
+  
+  class ShowSnippet:
+    def __init__(self, data, token, market):
+      self._token = token
+      self._market = market
+      self.id = data['id']
+      if 'available_markets' in data: self.market = data['available_markets']
+      self.description = data['description']
+      self.html_description = data['html_description']
+      self.copyrights = CreSpot._iter(data['copyrights'], CreSpot.Copyright, token, market)
+      self.external = data['external_urls']['spotify']
+      self.images = CreSpot._iter(data['images'], CreSpot.Image, token, market)
+      self.name = data['name']
+      self.publisher = data['publisher']
+      self.total = data['total_episodes']
+      self.type = data['media_type']
+    
+    def __str__(self):
+      return f'ShowSnippet: {self.name} - {self.publisher}'
+    
+    def __repr__(self):
+      return self.__str__()
+    
+    def get_real(self):
+      _h = { 'Authorization': 'Bearer ' + self._token }
+      req = requests.get(f'https://api.spotify.com/v1/shows/{self.id}?market={self._market}', headers=_h)
+      if req.status_code > 399: raise CreSpot.Error(req)
+      res = json.loads(req.text)
+      return CreSpot.Show(res, self._token, self._market)
   
   class EpisodeSnippet:
     def __init__(self, data, token, market):
@@ -71,80 +207,50 @@ class CreSpot:
       res = json.loads(req.text)
       return CreSpot.Episode(res, self._token, self._market)
   
-  class Show:
+  class ArtistSnippet:
     def __init__(self, data, token, market):
       self._token = token
       self._market = market
-      self.id = data['id']
-      self.description = data['description']
-      self.html_description = data['html_description']
-      self.copyrights = CreSpot._iter(data['copyrights'], CreSpot.Copyright, token, market)
-      if 'available_markets' in data: self.market = data['available_markets']
-      self.external = data['external_urls']['spotify']
-      self.images = CreSpot._iter(data['images'], CreSpot.Image, token, market)
       self.name = data['name']
-      self.publisher = data['publisher']
-      self.total = data['total_episodes']
-      self.type = data['media_type']
-      self.episodes = CreSpot._iter(data['episodes']['items'], CreSpot.Episode, token, market)
-     
-    def __str__(self):
-      return f'Show: {self.name} - {self.publisher}'
-    
-    def __repr__(self):
-      return self.__str__()
-   
-  class ShowSnippet:
-    def __init__(self, data, token, market):
-      self._token = token
-      self._market = market
       self.id = data['id']
-      if 'available_markets' in data: self.market = data['available_markets']
-      self.description = data['description']
-      self.html_description = data['html_description']
-      self.copyrights = CreSpot._iter(data['copyrights'], CreSpot.Copyright, token, market)
       self.external = data['external_urls']['spotify']
-      self.images = CreSpot._iter(data['images'], CreSpot.Image, token, market)
-      self.name = data['name']
-      self.publisher = data['publisher']
-      self.total = data['total_episodes']
-      self.type = data['media_type']
     
     def __str__(self):
-      return f'ShowSnippet: {self.name} - {self.publisher}'
+      return f'ArtistSnippet: {self.name}'
     
     def __repr__(self):
       return self.__str__()
     
     def get_real(self):
       _h = { 'Authorization': 'Bearer ' + self._token }
-      req = requests.get(f'https://api.spotify.com/v1/shows/{self.id}?market={self._market}', headers=_h)
+      req = requests.get(f'https://api.spotify.com/v1/artists/{self.id}?market={self._market}', headers=_h)
       if req.status_code > 399: raise CreSpot.Error(req)
       res = json.loads(req.text)
-      return CreSpot.Show(res, self._token, self._market)
-   
-  class Audiobook:
+      return CreSpot.Artist(res, self._token, self._market)
+  
+  class TrackSnippet:
     def __init__(self, data, token, market):
       self._token = token
       self._market = market
       self.id = data['id']
-      if 'available_markets' in data: self.market = data['available_markets']
-      self.description = data['description']
-      self.html_description = data['html_description']
-      self.copyrights = CreSpot._iter(data['copyrights'], CreSpot.Copyright, token, market)
       self.external = data['external_urls']['spotify']
-      self.images = CreSpot._iter(data['images'], CreSpot.Image, token, market)
       self.name = data['name']
-      self.publisher = data['publisher']
-      self.authors = [x['name'] for x in data['authors']]
-      self.narrators = [x['name'] for x in data['narrators']]
-      self.edition = data['edition']
-      self.total = data['total_chapters']
-      self.type = data['media_type']
-      self.chapters = CreSpot._iter(data['chapters']['items'], CreSpot.ChapterSnippet, token, market)
-     
+      self.number = data['track_number']
+      self.disc = data['disc_number']
+      self.explicit = data['explicit']
+      self.duration = data['duration_ms']
+      self.preview = data['preview_url']
+      self.artists = CreSpot._iter(data['artists'], CreSpot.ArtistSnippet, token, market)
+    
+    def get_real(self):
+      _h = { 'Authorization': 'Bearer ' + self._token }
+      req = requests.get(f'https://api.spotify.com/v1/tracks/{self.id}?market={self._market}', headers=_h)
+      if req.status_code > 399: raise CreSpot.Error(req)
+      res = json.loads(req.text)
+      return CreSpot.Track(res, self._token, self._market)
+    
     def __str__(self):
-      return f'Audiobook: {self.name} - {self.publisher}'
+      return f'TrackSnippet: {self.name} - {self.artists[0].name}'
     
     def __repr__(self):
       return self.__str__()
@@ -181,83 +287,53 @@ class CreSpot:
       res = json.loads(req.text)
       return CreSpot.Audiobook(res, self._token, self._market)
   
-  class ChapterSnippet:
+  # Group objects
+  
+  class Show:
     def __init__(self, data, token, market):
       self._token = token
       self._market = market
+      self.id = data['id']
       self.description = data['description']
       self.html_description = data['html_description']
+      self.copyrights = CreSpot._iter(data['copyrights'], CreSpot.Copyright, token, market)
       if 'available_markets' in data: self.market = data['available_markets']
-      self.duration = data['duration_ms']
-      self.number = data['chapter_number']
-      self.explicit = data['explicit']
-      self.available = data['is_playable']
-      self.languages = data['languages']
+      self.external = data['external_urls']['spotify']
+      self.images = CreSpot._iter(data['images'], CreSpot.Image, token, market)
       self.name = data['name']
-      self.preview = data['audio_preview_url']
-      self.date = data['release_date']
-      self.id = data['id']
-      
+      self.publisher = data['publisher']
+      self.total = data['total_episodes']
+      self.type = data['media_type']
+      self.episodes = CreSpot._iter(data['episodes']['items'], CreSpot.Episode, token, market)
+     
     def __str__(self):
-      return f'ChapterSnippet: {self.name}'
+      return f'Show: {self.name} - {self.publisher}'
     
     def __repr__(self):
       return self.__str__()
-    
-    def get_real(self):
-      _h = { 'Authorization': 'Bearer ' + self._token }
-      req = requests.get(f'https://api.spotify.com/v1/chapters/{self.id}?market={self._market}', headers=_h)
-      if req.status_code > 399: raise CreSpot.Error(req)
-      res = json.loads(req.text)
-      return CreSpot.Chapter(res, self._token, self._market)
   
-  class Chapter:
+  class Audiobook:
     def __init__(self, data, token, market):
       self._token = token
       self._market = market
+      self.id = data['id']
+      if 'available_markets' in data: self.market = data['available_markets']
       self.description = data['description']
       self.html_description = data['html_description']
-      if 'available_markets' in data: self.market = data['available_markets']
-      self.duration = data['duration_ms']
-      self.number = data['chapter_number']
-      self.explicit = data['explicit']
-      self.available = data['is_playable']
-      self.languages = data['languages']
+      self.copyrights = CreSpot._iter(data['copyrights'], CreSpot.Copyright, token, market)
+      self.external = data['external_urls']['spotify']
+      self.images = CreSpot._iter(data['images'], CreSpot.Image, token, market)
       self.name = data['name']
-      self.preview = data['audio_preview_url']
-      self.date = data['release_date']
-      self.id = data['id']
-      self.audiobook = CreSpot.AudiobookSnippet(data['audiobook'], token, market)
-      
+      self.publisher = data['publisher']
+      self.authors = [x['name'] for x in data['authors']]
+      self.narrators = [x['name'] for x in data['narrators']]
+      self.edition = data['edition']
+      self.total = data['total_chapters']
+      self.type = data['media_type']
+      self.chapters = CreSpot._iter(data['chapters']['items'], CreSpot.ChapterSnippet, token, market)
+     
     def __str__(self):
-      return f'Chapter: {self.name}'
-    
-    def __repr__(self):
-      return self.__str__()
-  
-  class Image:
-    def __init__(self, data, token, market):
-      self._token = token
-      self._market = market
-      self.width = data['width']
-      self.height = data['height']
-      self.url = data['url']
-    
-    def __str__(self):
-      return f'Image: {self.width}x{self.height}'
-    
-    def __repr__(self):
-      return self.__str__()
-  
-  class Copyright:
-    def __init__(self, data, token, market):
-      self._token = token
-      self._market = market
-      self.text = data['text']
-      self.type = data['type']
-    
-    def __str__(self):
-      return f'Copyright: ({self.type}) {self.text}'
+      return f'Audiobook: {self.name} - {self.publisher}'
     
     def __repr__(self):
       return self.__str__()
@@ -277,27 +353,6 @@ class CreSpot:
       self.snapshot = data['snapshot_id']
       self.total = data['tracks']['total']
       self.tracks = CreSpot._iter(data['tracks']['items'], CreSpot.TrackInfo, token, market)
-  
-  class TrackInfo:
-    def __init__(self, data, token, market):
-      self._token = token
-      self._market = market
-      self.local = data['local']
-      if 'added_by' in data: self.owner = CreSpot.Owner(data['added_by'], token, market)
-      if 'added_at' in data: self.date = data['added_at']
-      if self.track['type'] == 'episode':
-        self.track = CreSpot.Episode(data['track'], token, market)
-      else:
-        self.track = CreSpot.Track(data['track'], token, market)
-  
-  class Owner:
-    def __init__(self, data, token, market):
-      self._token = token
-      self._market = market
-      self.external = data['external_urls']['spotify']
-      self.followers = data['followers']['total']
-      self.id = data['id']
-      if 'name' in data: self.name = data['display_name']
   
   class Album:
     def __init__(self, data, token, market):
@@ -323,71 +378,51 @@ class CreSpot:
     def __repr__(self):
       return self.__str__()
   
-  class AlbumSnippet:
+  # Single objects
+  
+  class Episode:
     def __init__(self, data, token, market):
       self._token = token
       self._market = market
-      self.id = data['id']
-      self.type = data['album_type']
-      self.total = data['total_tracks']
+      self.description = data['description']
+      self.html_description = data['html_description']
+      if 'available_markets' in data: self.market = data['available_markets']
+      self.duration = data['duration_ms']
+      self.explicit = data['explicit']
+      self.available = data['is_playable']
+      self.languages = data['languages']
       self.name = data['name']
       self.date = data['release_date']
-      self.artists = CreSpot._iter(data['artists'], CreSpot.ArtistSnippet, token, market)
-      if 'available_markets' in data: self.market = data['available_markets']
-      self.external = data['external_urls']['spotify']
-      self.images = CreSpot._iter(data['images'], CreSpot.Image, token, market)
-    
-    def __str__(self):
-      artists = ', '.join([x.name for x in self.artists])
-      return f'AlbumSnippet: {self.name} - {artists}'
-    
-    def __repr__(self):
-      return self.__str__()
-    
-    def get_real(self):
-      _h = { 'Authorization': 'Bearer ' + self._token }
-      req = requests.get(f'https://api.spotify.com/v1/albums/{self.id}?market={self._market}', headers=_h)
-      if req.status_code > 399: raise CreSpot.Error(req)
-      res = json.loads(req.text)
-      return CreSpot.Album(res, self._token, self._market)
-  
-  class ArtistSnippet:
-    def __init__(self, data, token, market):
-      self._token = token
-      self._market = market
-      self.name = data['name']
       self.id = data['id']
-      self.external = data['external_urls']['spotify']
+      self.preview = data['audio_preview_url']
+      self.show = CreSpot.ShowSnippet(data['show'], token, market)
     
     def __str__(self):
-      return f'ArtistSnippet: {self.name}'
+      return f'Episode: {self.name} - {self.show.name}'
     
     def __repr__(self):
       return self.__str__()
-    
-    def get_real(self):
-      _h = { 'Authorization': 'Bearer ' + self._token }
-      req = requests.get(f'https://api.spotify.com/v1/artists/{self.id}?market={self._market}', headers=_h)
-      if req.status_code > 399: raise CreSpot.Error(req)
-      res = json.loads(req.text)
-      return CreSpot.Artist(res, self._token, self._market)
   
-  class Identifications:
+  class Chapter:
     def __init__(self, data, token, market):
       self._token = token
       self._market = market
-      self.isrc = data['isrc'] if 'isrc' in data else None
-      self.ean = data['ean'] if 'ean' in data else None
-      self.upc = data['upc'] if 'upc' in data else None
-    
+      self.description = data['description']
+      self.html_description = data['html_description']
+      if 'available_markets' in data: self.market = data['available_markets']
+      self.duration = data['duration_ms']
+      self.number = data['chapter_number']
+      self.explicit = data['explicit']
+      self.available = data['is_playable']
+      self.languages = data['languages']
+      self.name = data['name']
+      self.preview = data['audio_preview_url']
+      self.date = data['release_date']
+      self.id = data['id']
+      self.audiobook = CreSpot.AudiobookSnippet(data['audiobook'], token, market)
+      
     def __str__(self):
-      avail = []
-      if 'isrc' in self: avail.append('isrc')
-      if 'ean' in self: avail.append('ean')
-      if 'upc' in self: avail.append('upc')
-      avail = ', '.join(avail)
-      if len(avail) == 0: avail = 'None'
-      return f'Identification: {avail}'
+      return f'Chapter: {self.name}'
     
     def __repr__(self):
       return self.__str__()
@@ -406,33 +441,6 @@ class CreSpot:
     
     def __str__(self):
       return f'Artist: {self.name}'
-    
-    def __repr__(self):
-      return self.__str__()
-  
-  class TrackSnippet:
-    def __init__(self, data, token, market):
-      self._token = token
-      self._market = market
-      self.id = data['id']
-      self.external = data['external_urls']['spotify']
-      self.name = data['name']
-      self.number = data['track_number']
-      self.disc = data['disc_number']
-      self.explicit = data['explicit']
-      self.duration = data['duration_ms']
-      self.preview = data['preview_url']
-      self.artists = CreSpot._iter(data['artists'], CreSpot.ArtistSnippet, token, market)
-    
-    def get_real(self):
-      _h = { 'Authorization': 'Bearer ' + self._token }
-      req = requests.get(f'https://api.spotify.com/v1/tracks/{self.id}?market={self._market}', headers=_h)
-      if req.status_code > 399: raise CreSpot.Error(req)
-      res = json.loads(req.text)
-      return CreSpot.Track(res, self._token, self._market)
-    
-    def __str__(self):
-      return f'TrackSnippet: {self.name} - {self.artists[0].name}'
     
     def __repr__(self):
       return self.__str__()
@@ -461,6 +469,8 @@ class CreSpot:
     def __repr__(self):
       return self.__str__()
   
+  # Methods
+  
   def create_token():
     req = requests.get('https://open.spotify.com/get_access_token?reason=transport&productType=web_player')
     return json.loads(req.text)['accessToken']
@@ -477,7 +487,8 @@ class CreSpot:
   
   def update_token(self, token):
     self._token = token
-    
+  
+  # HTTP Based Objects
   def search(self, query, types=['artist', 'album', 'track'], page=0):
     _m = self._market
     q = quote(query)
