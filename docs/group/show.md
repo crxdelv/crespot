@@ -5,9 +5,6 @@ A `Show` object contains 12 properties (excluding `_market` and `_token`). For t
 ### `str: id`
 This is the ID of the album.
 
-### `bool: collaborative`
-This is set to true if the playlist allow public collaboration.
-
 ### `str: description` <kbd>Nullable</kbd>
 This is the description of the playlist.
 
