@@ -1,4 +1,7 @@
 <!-- :thedocss: allow-access false -->
+<!-- :thedocss: remove blockquote:first-child -->
+
+> This document is available on [**thedocss**](https://thedocss.vercel.app/crespot/single/episode). :sparkles:
 
 <h3 align="center"><code>Episode</code> <kbd>Object</kbd></h3>
 
