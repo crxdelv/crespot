@@ -12,7 +12,7 @@ This is the description of the show.
 This is the HTML-formatted description of the show.
 
 ### `str: external`
-This is the albums's page url of Spotify's website.
+This is the show's page url of Spotify's website.
 
 ### `list(Copyright): copyrights`
 This is a list of copyright informations of the show.
