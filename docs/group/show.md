@@ -3,10 +3,10 @@
 A `Show` object contains 12 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`ShowSnippet`](/crespot/snippet/show)
 
 ### `str: id`
-This is the ID of the album.
+This is the ID of the show.
 
 ### `str: description` <kbd>Nullable</kbd>
-This is the description of the playlist.
+This is the description of the show.
 
 ### `str: external`
 This is the albums's page url of Spotify's website.
