@@ -1,3 +1,5 @@
+<!-- :thedocss: allow-access false -->
+
 <h3 align="center"><code>Episode</code> <kbd>Object</kbd></h3>
 
 A `Show` object contains 12 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`EpisodeSnippet`](/crespot/snippet/episode).
