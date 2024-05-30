@@ -70,7 +70,9 @@ This method creates a temporary access token that can be used at anything.
 
 #### `update_token(str: token)`
 
-This method updates the current token. This is useful for regenerating the token or using an actual authorized token.
+This method updates the current token. This is useful for regenerating the token.
+
+If you're too lazy, just use `self._token = your_token`. 
 
 #### `get_genre_seeds() -> list(str)` <kbd>:globe_with_meridians:</kbd>
 
@@ -79,3 +81,35 @@ This method returns a list of recommended genre seeds.
 #### `get_markets() -> list(str)` <kbd>:globe_with_meridians:</kbd>
 
 This method returns a list of available markets.
+
+#### `get_track(str: track_id) -> Track` <kbd>:globe_with_meridians:</kbd>
+
+This method returns a `Track` object if the search is successful. Please be aware of the IDs because every objects has the same ID format but different instance.
+
+#### `get_artist(str: artist_id) -> Artist` <kbd>:globe_with_meridians:</kbd>
+
+This method returns an `Artist` object if the search is successful. Please be aware of the IDs because every objects has the same ID format but different instance.
+
+#### `get_album(str: album_id) -> Album` <kbd>:globe_with_meridians:</kbd>
+
+This method returns an `Album` object if the search is successful. Please be aware of the IDs because every objects has the same ID format but different instance.
+
+#### `get_playlist(str: playlist_id) -> Playlist` <kbd>:globe_with_meridians:</kbd>
+
+This method returns a `Playlist` object if the search is successful. Please be aware of the IDs because every objects has the same ID format but different instance.
+
+#### `get_show(str: show_id) -> Show` <kbd>:globe_with_meridians:</kbd>
+
+This method returns a `Show` object if the search is successful. Please be aware of the IDs because every objects has the same ID format but different instance.
+
+#### `get_episode(str: episode_id) -> Episode` <kbd>:globe_with_meridians:</kbd>
+
+This method returns an `Episode` object if the search is successful. Please be aware of the IDs because every objects has the same ID format but different instance.
+
+#### `get_audiobook(str: audiobook_id) -> Audiobook` <kbd>:globe_with_meridians:</kbd>
+
+This method returns an `Audiobook` object if the search is successful. Please be aware of the IDs because every objects has the same ID format but different instance.
+
+#### `get_chapter(str: chapter_id) -> Chapter` <kbd>:globe_with_meridians:</kbd>
+
+This method returns a `Chapter` object if the search is successful. Please be aware of the IDs because every objects has the same ID format but different instance.
