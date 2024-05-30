@@ -37,3 +37,9 @@ This is a list of snippet episodes of the show.
 
 ### `list(Image): images`
 This is the artwork images of the playlist.
+
+### Related links
+
+- [`Copyright`](/crespot/detail/copyright)
+- [`EpisodeSnippet`](/crespot/snippet/episode)
+- [`Image`](/crespot/detail/image)
