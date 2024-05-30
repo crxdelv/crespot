@@ -27,17 +27,16 @@ This is the name of the episode.
 ### `int: duration`
 This is the milliseconds duration of the episode.
 
+### `str: date`
+This is the first release date of the album. The format is `yyyy-mm-dd`.
+
 ### `str: type`
 This is the media type of the show.
 
 ### `str: publisher`
 This is the publisher of the show.
 
-### `list(EpisodeSnippet): episodes`
-This is a list of snippet episodes of the show.
 
-### `list(Image): images`
-This is the artwork images of the playlist.
 
 ### Related links
 
