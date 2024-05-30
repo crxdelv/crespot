@@ -2,12 +2,14 @@
 <p align="center">A python wrapper for Spotify API with no required authentication. :musical_note:</p>
 
 
-### :key: Key concepts
+### :key: Must-read informations
 1. Simplified objects are named with the postfix `Snippet`. For example, `ArtistSnippet` is the simplified object of `Artist`.
 2. Every objects (excluding detail objects) have the property `_token` and `_market`.
-3. Every snippets have the method `get_real` that returns a non-snippet class instance.
+3. Every snippets have the method `get_real` <kbd>:globe_with_meridians:</kbd> that returns a non-snippet class instance.
 4. <kbd>:globe_with_meridians:</kbd> badge signifies that the method uses http request(s).
 5. <kbd>Nullable</kbd> are properties that can be `None`, while <kbd>Undefinable</kbd> are properties that can not exist.
+
+**Not-so-important informations**
 
 1. `User` object is not included as it lacks of usage due to the unauthenticated access.
 2. Some properties are not added, such as `href` and `uri`.
