@@ -12,7 +12,7 @@ This is the label name of the album.
 This is the album type. It can be an `single`, `album`, or `compilation`.
 
 ### `str: external`
-This is the albums's page url of Spotify's website.
+This is the album's page url of Spotify's website.
 
 ### `int: popularity`
 This is the popularity score of the album.
