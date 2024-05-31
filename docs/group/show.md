@@ -1,6 +1,6 @@
 <h3 align="center"><code>Show</code> <kbd>Object</kbd></h3>
 
-A `Show` object contains 12 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`ShowSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/show).
+A `Show` object contains 12 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`ShowSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/show.md).
 
 ### `str: id`
 This is the ID of the show.
@@ -40,6 +40,6 @@ This is the artwork images of the playlist.
 
 ### Related links
 
-- [`Copyright`](https://github.com/creuserr/crespot/tree/main/docs/detail/copyright)
-- [`EpisodeSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/episode)
-- [`Image`](https://github.com/creuserr/crespot/tree/main/docs/detail/image)
+- [`Copyright`](https://github.com/creuserr/crespot/tree/main/docs/detail/copyright.md)
+- [`EpisodeSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/episode.md)
+- [`Image`](https://github.com/creuserr/crespot/tree/main/docs/detail/image.md)
