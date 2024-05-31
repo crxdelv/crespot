@@ -6,7 +6,7 @@
 1. `User` object is not included as it lacks of usage due to the unauthenticated access.
 2. Some properties are not added, such as `href` and `uri`.
 3. <kbd>Nullable</kbd> are properties that can be `None`, while <kbd>Undefinable</kbd> are properties that can not exist.
-4. <kbd>:globe_with_meridians:</kbd> badge signifies that the method uses http request(s).
+4. <kbd>:globe_with_meridians:</kbd> badge signifies that the method uses http request(s.md).
 
 **Additional informations**
 
@@ -34,13 +34,13 @@ crespot has 20 classes, including all the snippets:
 
 #### Objects
 
-1. [`Track`](https://github.com/creuserr/crespot/tree/main/docs/single/track)
-2. [`Artist`](https://github.com/creuserr/crespot/tree/main/docs/single/artist)
-3. [`Album`](https://github.com/creuserr/crespot/tree/main/docs/group/album)
-4. [`Show`](https://github.com/creuserr/crespot/tree/main/docs/group/show)
-5. [`Episode`](https://github.com/creuserr/crespot/tree/main/docs/single/episode)
-6. [`Audiobook`](https://github.com/creuserr/crespot/tree/main/docs/group/audiobook)
-7. [`Chapter`](https://github.com/creuserr/crespot/tree/main/docs/single/chapter)
+1. [`Track`](https://github.com/creuserr/crespot/tree/main/docs/single/track.md)
+2. [`Artist`](https://github.com/creuserr/crespot/tree/main/docs/single/artist.md)
+3. [`Album`](https://github.com/creuserr/crespot/tree/main/docs/group/album.md)
+4. [`Show`](https://github.com/creuserr/crespot/tree/main/docs/group/show.md)
+5. [`Episode`](https://github.com/creuserr/crespot/tree/main/docs/single/episode.md)
+6. [`Audiobook`](https://github.com/creuserr/crespot/tree/main/docs/group/audiobook.md)
+7. [`Chapter`](https://github.com/creuserr/crespot/tree/main/docs/single/chapter.md)
 
 These classes have their own corresponding snippet. For example, the class `Track` has its own snippet named `TrackSnippet` and its also a class.
 
@@ -48,18 +48,18 @@ Therefore, the total classes of that list is 14.
 
 #### Special object
 
-1. [`Playlist`](https://github.com/creuserr/crespot/tree/main/docs/group/playlist)
+1. [`Playlist`](https://github.com/creuserr/crespot/tree/main/docs/group/playlist.md)
 
 This object is special as it doesn't have its own snippet and it has track informations.
 
 #### Detail objects
 
-1. [`Identification`](https://github.com/creuserr/crespot/tree/main/docs/detail/identification) &ndash; This class contains the external identification of the track.
-2. [`Image`](https://github.com/creuserr/crespot/tree/main/docs/detail/image) &ndash; This class contains the width <kbd>Nullable</kbd>, the height <kbd>Nullable</kbd>, and the source url of an image.
-3. [`Owner`](https://github.com/creuserr/crespot/tree/main/docs/detail/owner) &ndash; This class contains the information of the playlist's owner.
-4. [`TrackInfo`](https://github.com/creuserr/crespot/tree/main/docs/detail/trackinfo) &ndash; This class contains the information that the track has inside the playlist. For example, it includes who added the track to the partylist.
-5. [`Copyright`](https://github.com/creuserr/crespot/tree/main/docs/detail/copyright) &ndash; This class contains the copyright information of the object.
-6. [`Error`](https://github.com/creuserr/crespot/tree/main/docs/detail/copyright) &ndash; This class contains the error status and its JSON response. This class only can only appear when an HTTP request fails.
+1. [`Identification`](https://github.com/creuserr/crespot/tree/main/docs/detail/identification.md) &ndash; This class contains the external identification of the track.
+2. [`Image`](https://github.com/creuserr/crespot/tree/main/docs/detail/image.md) &ndash; This class contains the width <kbd>Nullable</kbd>, the height <kbd>Nullable</kbd>, and the source url of an image.
+3. [`Owner`](https://github.com/creuserr/crespot/tree/main/docs/detail/owner.md) &ndash; This class contains the information of the playlist's owner.
+4. [`TrackInfo`](https://github.com/creuserr/crespot/tree/main/docs/detail/trackinfo.md) &ndash; This class contains the information that the track has inside the playlist. For example, it includes who added the track to the partylist.
+5. [`Copyright`](https://github.com/creuserr/crespot/tree/main/docs/detail/copyright.md) &ndash; This class contains the copyright information of the object.
+6. [`Error`](https://github.com/creuserr/crespot/tree/main/docs/detail/copyright.md) &ndash; This class contains the error status and its JSON response. This class only can only appear when an HTTP request fails.
 
 ### Methods
 
