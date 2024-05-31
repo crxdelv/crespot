@@ -16,8 +16,3 @@ This snippet contains the following:
 
 ### `get_real() -> Episode` <kbd>:globe_with_meridians:</kbd>
 This method gets the actual class.
-
-### Related links
-
-- [`Copyright`](https://github.com/creuserr/crespot/tree/main/docs/detail/copyright.md)
-- [`Image`](https://github.com/creuserr/crespot/tree/main/docs/detail/image.md)
