@@ -17,6 +17,9 @@ This is the episode's page url of Spotify's website.
 ### `list(str): markets` <kbd>Undefinable</kbd>
 This is the list of available markets of the episode.
 
+### `list(str): languages`
+This is the list of available languages in the episode.
+
 ### `str: name`
 This is the name of the episode.
 
