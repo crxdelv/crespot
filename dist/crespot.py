@@ -62,7 +62,7 @@ class CreSpot:
       self.external = data['external_urls']['spotify']
       self.followers = data['followers']['total']
       self.id = data['id']
-      if 'name' in data: self.name = data['display_name']
+      if 'display_name' in data: self.name = data['display_name']
   
   class Image:
     def __init__(self, data, token, market):
