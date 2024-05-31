@@ -1,6 +1,6 @@
 <h3 align="center"><code>Track</code> <kbd>Object</kbd></h3>
 
-A `Track` object contains 13 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`TrackSnippet`](/crespot/snippet/track)
+A `Track` object contains 13 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`TrackSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/track)
 
 ### `str: id`
 This is the ID of the track.
@@ -43,6 +43,6 @@ This is a list of snippet artists of the track.
 
 ### Related links
 
-- [`ArtistSnippet`](/crespot/snippet/artist)
-- [`AlbumSnippet`](/crespot/snippet/album)
-- [`Identifications`](/crespot/detail/identification)
+- [`ArtistSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/artist)
+- [`AlbumSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/album)
+- [`Identifications`](https://github.com/creuserr/crespot/tree/main/docs/detail/identification)
