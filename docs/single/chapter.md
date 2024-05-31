@@ -1,6 +1,6 @@
 <h3 align="center"><code>Chapter</code> <kbd>Object</kbd></h3>
 
-A `Chapter` object contains 14 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`ChapterSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/chapter).
+A `Chapter` object contains 14 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`ChapterSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/chapter.md).
 
 ### `str: id`
 This is the ID of the chapter.
@@ -46,4 +46,4 @@ This is the snippet audiobook of the chapter.
 
 ### Related links
 
-- [`AudiobookSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/audiobook)
+- [`AudiobookSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/audiobook.md)
