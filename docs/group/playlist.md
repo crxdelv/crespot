@@ -1,7 +1,3 @@
-<!-- :thedocss: remove blockquote:first-child -->
-
-> This document is available on [**thedocss**](https://thedocss.vercel.app/crespot/group/playlist). :sparkles:
-
 <h3 align="center"><code>Playlist</code> <kbd>Object</kbd></h3>
 
 A `Playlist` object contains 12 properties (excluding `_market` and `_token`).
