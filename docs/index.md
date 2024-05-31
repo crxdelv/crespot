@@ -28,13 +28,13 @@ crespot has 20 classes, including all the snippets:
 
 #### Objects
 
-1. [`Track`](/crespot/single/track)
-2. [`Artist`](/crespot/single/artist)
-3. [`Album`](/crespot/group/album)
-4. [`Show`](/crespot/group/show)
-5. [`Episode`](/crespot/single/episode)
-6. [`Audiobook`](/crespot/group/audiobook)
-7. [`Chapter`](/crespot/single/chapter)
+1. [`Track`](https://github.com/creuserr/crespot/tree/main/docs/single/track)
+2. [`Artist`](https://github.com/creuserr/crespot/tree/main/docs/single/artist)
+3. [`Album`](https://github.com/creuserr/crespot/tree/main/docs/group/album)
+4. [`Show`](https://github.com/creuserr/crespot/tree/main/docs/group/show)
+5. [`Episode`](https://github.com/creuserr/crespot/tree/main/docs/single/episode)
+6. [`Audiobook`](https://github.com/creuserr/crespot/tree/main/docs/group/audiobook)
+7. [`Chapter`](https://github.com/creuserr/crespot/tree/main/docs/single/chapter)
 
 These classes have their own corresponding snippet. For example, the class `Track` has its own snippet named `TrackSnippet` and its also a class.
 
@@ -42,17 +42,18 @@ Therefore, the total classes of that list is 14.
 
 #### Special object
 
-1. [`Playlist`](/crespot/group/playlist)
+1. [`Playlist`](https://github.com/creuserr/crespot/tree/main/docs/group/playlist)
 
 This object is special as it doesn't have its own snippet and it has track informations.
 
 #### Detail objects
 
-1. [`Identification`](/crespot/detail/identification) &ndash; This class contains the external identification of the track.
-2. [`Image`](/crespot/detail/image) &ndash; This class contains the width <kbd>Nullable</kbd>, the height <kbd>Nullable</kbd>, and the source url of an image.
-3. [`Owner`](/crespot/detail/owner) &ndash; This class contains the information of the playlist's owner.
-4. [`TrackInfo`](/crespot/detail/trackinfo) &ndash; This class contains the information that the track has inside the playlist. For example, it includes who added the track to the partylist.
-5. [`Copyright`](/crespot/detail/copyright) &ndash; This class contains the copyright information of the object.
+1. [`Identification`](https://github.com/creuserr/crespot/tree/main/docs/detail/identification) &ndash; This class contains the external identification of the track.
+2. [`Image`](https://github.com/creuserr/crespot/tree/main/docs/detail/image) &ndash; This class contains the width <kbd>Nullable</kbd>, the height <kbd>Nullable</kbd>, and the source url of an image.
+3. [`Owner`](https://github.com/creuserr/crespot/tree/main/docs/detail/owner) &ndash; This class contains the information of the playlist's owner.
+4. [`TrackInfo`](https://github.com/creuserr/crespot/tree/main/docs/detail/trackinfo) &ndash; This class contains the information that the track has inside the playlist. For example, it includes who added the track to the partylist.
+5. [`Copyright`](https://github.com/creuserr/crespot/tree/main/docs/detail/copyright) &ndash; This class contains the copyright information of the object.
+6. [`Error`](https://github.com/creuserr/crespot/tree/main/docs/detail/copyright) &ndash; This class contains the error status and its JSON response after an http request failed.
 
 ### Methods
 
