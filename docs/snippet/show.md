@@ -13,6 +13,7 @@ This snippet contains the following:
 8. `str: name`
 9. `int: total`
 10. `str: type`
+11. `list(str): markets`
 
 ### `get_real() -> Show` <kbd>:globe_with_meridians:</kbd>
 This method gets the actual class.
