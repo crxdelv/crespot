@@ -50,7 +50,7 @@ class CreSpot:
       self.local = data['local']
       if 'added_by' in data: self.owner = CreSpot.Owner(data['added_by'], token, market)
       if 'added_at' in data: self.date = data['added_at']
-      if self.track['type'] == 'episode':
+      if data['type'] == 'episode':
         self.track = CreSpot.Episode(data['track'], token, market)
       else:
         self.track = CreSpot.Track(data['track'], token, market)
