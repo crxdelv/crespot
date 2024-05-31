@@ -8,5 +8,5 @@ This is the width of the image.
 ### `int: height` <kbd>Nullable</kbd>
 This is the height of the image.
 
-### `src: url`
+### `str: url`
 This is the source url of the image.
