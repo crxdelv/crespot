@@ -71,7 +71,24 @@ This method is used to search for objects.
 
 `type` argument specifies which objects you are looking for. The valid values are `artist`, `album`, `track`, `playlist`, `show`, `episode`, `audiobook`, and `chapter`. For example, `type='track'` only returns tracks.
 
-`page` is how you control the parameter limit and offset. The limit is `20` and cannot be 
+`page` is how you control the parameter limit and offset. The limit is multiplied by 20 and defaults by 20. For example, if the page is 1, then the limit is 40 and the offset is 20.
+
+This method will return this schema:
+```py
+{
+  'total': int,
+  'tracks': list(Track),
+  'albums': list(AlbumSnippet),
+  'artists': list(Artist),
+  'shows': list(ShowSnippet),
+  'episodes': list(EpisodeSnippet),
+  'audiobooks': list(AudiobookSnippet),
+  'chapters': list(ChapterSnippet),
+  'playlists': list(Playlist)
+}
+```
+
+Please note that everything (except `total`) are undefinable.
 
 #### static `create_token() -> str`
 
