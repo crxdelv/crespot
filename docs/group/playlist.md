@@ -37,6 +37,6 @@ This is the artwork images of the playlist.
 
 ### Related links
 
-- [`Owner`](/crespot/detail/owner)
-- [`TrackInfo`](/crespot/detail/trackinfo)
-- [`Image`](/crespot/detail/image)
+- [`Owner`](https://github.com/creuserr/crespot/tree/main/docs/detail/owner)
+- [`TrackInfo`](https://github.com/creuserr/crespot/tree/main/docs/detail/trackinfo)
+- [`Image`](https://github.com/creuserr/crespot/tree/main/docs/detail/image)
