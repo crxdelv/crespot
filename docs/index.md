@@ -11,7 +11,7 @@
 **Additional informations**
 
 1. Simplified objects are named with the postfix `Snippet`. For example, `ArtistSnippet` is the simplified object of `Artist`.
-2. Every objects (excluding detail objects) have the property `_token` and `_market`.
+2. Every class have the property `_token` and `_market`.
 3. Every snippets have the method `get_real` <kbd>:globe_with_meridians:</kbd> that returns a non-snippet class instance.
 
 ### :book: What is crespot?
