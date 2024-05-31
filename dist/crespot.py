@@ -492,7 +492,6 @@ class CreSpot:
   def update_token(self, token):
     self._token = token
   
-  # HTTP Based Objects
   def search(self, query, types=['artist', 'album', 'track'], page=0):
     _m = self._market
     q = quote(query)
