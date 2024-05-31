@@ -11,7 +11,7 @@ print(result.tracks[0])
 
 ### Installation
 
-Download the file [`crespot.py`](https://github.com/creuserr/crespot/blob/main/dist/crespot.py.md) and import it.
+Download the file [`crespot.py`](https://github.com/creuserr/crespot/blob/main/dist/crespot.py) and import it.
 
 ```py
 from crespot import CreSpot
