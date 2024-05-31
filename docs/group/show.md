@@ -40,6 +40,6 @@ This is the artwork images of the playlist.
 
 ### Related links
 
-- [`Copyright`](/crespot/detail/copyright)
-- [`EpisodeSnippet`](/crespot/snippet/episode)
-- [`Image`](/crespot/detail/image)
+- [`Copyright`](https://github.com/creuserr/crespot/tree/main/docs/detail/copyright)
+- [`EpisodeSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/episode)
+- [`Image`](https://github.com/creuserr/crespot/tree/main/docs/detail/image)
