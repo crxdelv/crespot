@@ -13,7 +13,7 @@ class CreSpot:
       self._market = market
       self.error = req.status_code
       try:
-        self.content = json.loads(req.text)['error']['message']
+        self.message = json.loads(req.text)['error']['message']
       except:
         pass
     
