@@ -13,6 +13,7 @@ This snippet contains the following:
 10. `bool: explicit`
 11. `list(str): markets`
 12. `str: date`
+13. `bool: available`
 
 ### `get_real() -> Episode` <kbd>:globe_with_meridians:</kbd>
 This method gets the actual class.
