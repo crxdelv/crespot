@@ -1,6 +1,6 @@
 <h3 align="center"><code>EpisodeSnippet</code> <kbd>Simplified Object</kbd></h3>
 
-For the actual class, please refer to [`Episode`](https://github.com/creuserr/crespot/tree/main/docs/group/show.md).
+For the actual class, please refer to [`Episode`](https://github.com/creuserr/crespot/tree/main/docs/single/episode.md).
 
 This snippet contains the following:
 1. `str: id`
@@ -14,7 +14,7 @@ This snippet contains the following:
 9. `int: total`
 10. `str: type`
 
-### `get_real() -> Show` <kbd>:globe_with_meridians:</kbd>
+### `get_real() -> Episode` <kbd>:globe_with_meridians:</kbd>
 This method gets the actual class.
 
 ### Related links
