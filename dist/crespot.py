@@ -235,6 +235,7 @@ class CreSpot:
       self._token = token
       self._market = market
       self.id = data['id']
+      if 'available_markets' in data: self.markets = data['available_markets']
       self.external = data['external_urls']['spotify']
       self.name = data['name']
       self.number = data['track_number']
