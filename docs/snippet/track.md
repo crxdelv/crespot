@@ -11,7 +11,7 @@ This snippet contains the following:
 6. `bool: explicit`
 7. `int: duration`
 8. `str: preview`
-9. `ArtistSnippet: artists`
+9. `list(ArtistSnippet): artists`
 10. `list(str): markets`
 
 ### `get_real() -> Track` <kbd>:globe_with_meridians:</kbd>
