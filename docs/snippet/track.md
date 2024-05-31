@@ -13,6 +13,9 @@ This snippet contains the following:
 8. `str: preview`
 9. `ArtistSnippet: artists`
 
+### `get_real() -> Track` <kbd>:globe_with_meridians:</kbd>
+This method gets the actual class.
+
 ### Related links
 
 - [`ArtistSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/artist)
