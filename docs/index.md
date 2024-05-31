@@ -23,6 +23,12 @@ crespot is basically a python wrapper for spotify's web api. The greatest thing 
 CreSpot(str: token, str: market='ES')
 ```
 
+If you still want to use your token, it is recommended to use spotify's actual web api instead. This api is not designed for modifications (e.g. creating a playlist) and user-related stuffs (e.g. user liked songs).
+
+Market is used to determine if the object is available. Markets are strings that includes two-letter country code. For example, `ES` is spain.
+
+*Spotify chose spain as the default value.*
+
 ### :nesting_dolls: Classes
 crespot has 20 classes, including all the snippets:
 
@@ -57,13 +63,7 @@ This object is special as it doesn't have its own snippet and it has track infor
 
 ### Methods
 
-crespot have 13 methods in its inner class:
-
-#### `__init__(str: token, str: market='ES')`
-
-Market are used to determine if the object is available. Markets are strings that includes two-letter country code. For example, `ES` is spain.
-
-*Spotify chose ES as the default value. It's not my fault.*
+crespot have 12 methods in its inner class:
 
 #### `search(str: query, str or list: type=['artist', 'album', 'track'], int: page=0) -> dict` <kbd>:globe_with_meridians:</kbd>
 
