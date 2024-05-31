@@ -1,6 +1,6 @@
-<!-- :thedocss: remove blockquote:first-child -->
+<!-- :thedocss: remove blockquote:has([rel="nofollow"]):first-child -->
 <!-- :thedocss: title crespot -->
-<!-- :thedocss: desc A python wrapper for Spotify API with no required authentication. :musical_note: -->
+<!-- :thedocss: desc A python wrapper for Spotify API with no required authentication. -->
 
 > This document is available on [**thedocss**](https://thedocss.vercel.app/crespot). :sparkles:
 
