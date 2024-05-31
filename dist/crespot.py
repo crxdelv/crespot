@@ -8,7 +8,9 @@ class CreSpot:
   # Detail objects
   
   class Error(Exception):
-    def __init__(self, req):
+    def __init__(self, req, token, market):
+      self._token = token
+      self._market = market
       self.error = req.status_code
       try:
         self.content = json.loads(req.text)['error']['message']
@@ -115,7 +117,7 @@ class CreSpot:
     def get_real(self):
       _h = { 'Authorization': 'Bearer ' + self._token }
       req = requests.get(f'https://api.spotify.com/v1/albums/{self.id}?market={self._market}', headers=_h)
-      if req.status_code > 399: raise CreSpot.Error(req)
+      if req.status_code > 399: raise CreSpot.Error(req, self._token, self._market)
       res = json.loads(req.text)
       return CreSpot.Album(res, self._token, self._market)
   
@@ -145,7 +147,7 @@ class CreSpot:
     def get_real(self):
       _h = { 'Authorization': 'Bearer ' + self._token }
       req = requests.get(f'https://api.spotify.com/v1/chapters/{self.id}?market={self._market}', headers=_h)
-      if req.status_code > 399: raise CreSpot.Error(req)
+      if req.status_code > 399: raise CreSpot.Error(req, self._token, self._market)
       res = json.loads(req.text)
       return CreSpot.Chapter(res, self._token, self._market)
   
@@ -174,7 +176,7 @@ class CreSpot:
     def get_real(self):
       _h = { 'Authorization': 'Bearer ' + self._token }
       req = requests.get(f'https://api.spotify.com/v1/shows/{self.id}?market={self._market}', headers=_h)
-      if req.status_code > 399: raise CreSpot.Error(req)
+      if req.status_code > 399: raise CreSpot.Error(req, self._token, self._market)
       res = json.loads(req.text)
       return CreSpot.Show(res, self._token, self._market)
   
@@ -203,7 +205,7 @@ class CreSpot:
     def get_real(self):
       _h = { 'Authorization': 'Bearer ' + self._token }
       req = requests.get(f'https://api.spotify.com/v1/episodes/{self.id}?market={self._market}', headers=_h)
-      if req.status_code > 399: raise CreSpot.Error(req)
+      if req.status_code > 399: raise CreSpot.Error(req, self._token, self._market)
       res = json.loads(req.text)
       return CreSpot.Episode(res, self._token, self._market)
   
@@ -224,7 +226,7 @@ class CreSpot:
     def get_real(self):
       _h = { 'Authorization': 'Bearer ' + self._token }
       req = requests.get(f'https://api.spotify.com/v1/artists/{self.id}?market={self._market}', headers=_h)
-      if req.status_code > 399: raise CreSpot.Error(req)
+      if req.status_code > 399: raise CreSpot.Error(req, self._token, self._market)
       res = json.loads(req.text)
       return CreSpot.Artist(res, self._token, self._market)
   
@@ -245,7 +247,7 @@ class CreSpot:
     def get_real(self):
       _h = { 'Authorization': 'Bearer ' + self._token }
       req = requests.get(f'https://api.spotify.com/v1/tracks/{self.id}?market={self._market}', headers=_h)
-      if req.status_code > 399: raise CreSpot.Error(req)
+      if req.status_code > 399: raise CreSpot.Error(req, self._token, self._market)
       res = json.loads(req.text)
       return CreSpot.Track(res, self._token, self._market)
     
@@ -283,7 +285,7 @@ class CreSpot:
     def get_real(self):
       _h = { 'Authorization': 'Bearer ' + self._token }
       req = requests.get(f'https://api.spotify.com/v1/audiobooks/{self.id}?market={self._market}', headers=_h)
-      if req.status_code > 399: raise CreSpot.Error(req)
+      if req.status_code > 399: raise CreSpot.Error(req, self._token, self._market)
       res = json.loads(req.text)
       return CreSpot.Audiobook(res, self._token, self._market)
   
@@ -499,7 +501,7 @@ class CreSpot:
     t = ','.join(types) if t is list or t is tuple else types
     _h = { 'Authorization': 'Bearer ' + self._token }
     req = requests.get(f'https://api.spotify.com/v1/search?q={q}&type={t}&market={_m}&limit={limit}&offset={offset}', headers=_h)
-    if req.status_code > 399: raise CreSpot.Error(req)
+    if req.status_code > 399: raise CreSpot.Error(req, self._token, self._market)
     res = json.loads(req.text)
     ins = {
       'total': 0
@@ -531,7 +533,7 @@ class CreSpot:
     _m = self._market
     _h = { 'Authorization': 'Bearer ' + self._token }
     req = requests.get(f'https://api.spotify.com/v1/recommendations/available-genre-seeds', headers=_h)
-    if req.status_code > 399: raise CreSpot.Error(req)
+    if req.status_code > 399: raise CreSpot.Error(req, self._token, self._market)
     res = json.loads(req.text)
     return res
     
@@ -539,7 +541,7 @@ class CreSpot:
     _m = self._market
     _h = { 'Authorization': 'Bearer ' + self._token }
     req = requests.get(f'https://api.spotify.com/v1/markets', headers=_h)
-    if req.status_code > 399: raise CreSpot.Error(req)
+    if req.status_code > 399: raise CreSpot.Error(req, self._token, self._market)
     res = json.loads(req.text)
     return res
   
@@ -547,7 +549,7 @@ class CreSpot:
     _m = self._market
     _h = { 'Authorization': 'Bearer ' + self._token }
     req = requests.get(f'https://api.spotify.com/v1/artists/{key}', headers=_h)
-    if req.status_code > 399: raise CreSpot.Error(req)
+    if req.status_code > 399: raise CreSpot.Error(req, self._token, self._market)
     res = json.loads(req.text)
     return CreSpot.Artist(res)
   
@@ -555,7 +557,7 @@ class CreSpot:
     _m = self._market
     _h = { 'Authorization': 'Bearer ' + self._token }
     req = requests.get(f'https://api.spotify.com/v1/albums/{key}', headers=_h)
-    if req.status_code > 399: raise CreSpot.Error(req)
+    if req.status_code > 399: raise CreSpot.Error(req, self._token, self._market)
     res = json.loads(req.text)
     return CreSpot.Album(res)
   
@@ -563,7 +565,7 @@ class CreSpot:
     _m = self._market
     _h = { 'Authorization': 'Bearer ' + self._token }
     req = requests.get(f'https://api.spotify.com/v1/tracks/{key}', headers=_h)
-    if req.status_code > 399: raise CreSpot.Error(req)
+    if req.status_code > 399: raise CreSpot.Error(req, self._token, self._market)
     res = json.loads(req.text)
     return CreSpot.Track(res)
   
@@ -571,7 +573,7 @@ class CreSpot:
     _m = self._market
     _h = { 'Authorization': 'Bearer ' + self._token }
     req = requests.get(f'https://api.spotify.com/v1/playlists/{key}', headers=_h)
-    if req.status_code > 399: raise CreSpot.Error(req)
+    if req.status_code > 399: raise CreSpot.Error(req, self._token, self._market)
     res = json.loads(req.text)
     return CreSpot.Playlist(res)
   
@@ -579,7 +581,7 @@ class CreSpot:
     _m = self._market
     _h = { 'Authorization': 'Bearer ' + self._token }
     req = requests.get(f'https://api.spotify.com/v1/shows/{key}', headers=_h)
-    if req.status_code > 399: raise CreSpot.Error(req)
+    if req.status_code > 399: raise CreSpot.Error(req, self._token, self._market)
     res = json.loads(req.text)
     return CreSpot.Show(res)
   
@@ -587,7 +589,7 @@ class CreSpot:
     _m = self._market
     _h = { 'Authorization': 'Bearer ' + self._token }
     req = requests.get(f'https://api.spotify.com/v1/episodes/{key}', headers=_h)
-    if req.status_code > 399: raise CreSpot.Error(req)
+    if req.status_code > 399: raise CreSpot.Error(req, self._token, self._market)
     res = json.loads(req.text)
     return CreSpot.Episode(res)
   
@@ -595,7 +597,7 @@ class CreSpot:
     _m = self._market
     _h = { 'Authorization': 'Bearer ' + self._token }
     req = requests.get(f'https://api.spotify.com/v1/audiobooks/{key}', headers=_h)
-    if req.status_code > 399: raise CreSpot.Error(req)
+    if req.status_code > 399: raise CreSpot.Error(req, self._token, self._market)
     res = json.loads(req.text)
     return CreSpot.Audiobook(res)
   
@@ -603,6 +605,6 @@ class CreSpot:
     _m = self._market
     _h = { 'Authorization': 'Bearer ' + self._token }
     req = requests.get(f'https://api.spotify.com/v1/chapters/{key}', headers=_h)
-    if req.status_code > 399: raise CreSpot.Error(req)
+    if req.status_code > 399: raise CreSpot.Error(req, self._token, self._market)
     res = json.loads(req.text)
     return CreSpot.Chapter(res)
