@@ -56,6 +56,6 @@ from crespot import CreSpot
 - [`ChapterSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/chapter.md)
 
 ### Contributions
-This repository is tagged with `good-first-issue`. However, we should keep our contribution clean.
+This repository welcomes contributions from new developers. However, we should keep our contribution clean.
 
 For information about how to properly contribute to this repository, please refer to [CONTRIBUTING.md](https://github.com/creuserr/crespot/tree/main/CONTRIBUTING.md).
