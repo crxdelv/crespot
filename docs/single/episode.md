@@ -1,6 +1,6 @@
 <h3 align="center"><code>Episode</code> <kbd>Object</kbd></h3>
 
-An `Episode` object contains 14 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`EpisodeSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/episode).
+An `Episode` object contains 14 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`EpisodeSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/episode.md).
 
 ### `str: id`
 This is the ID of the episode.
@@ -46,4 +46,4 @@ This is the snippet show of the episode.
 
 ### Related links
 
-- [`ShowSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/show)
+- [`ShowSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/show.md)
