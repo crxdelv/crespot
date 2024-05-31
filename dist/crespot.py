@@ -524,6 +524,9 @@ class CreSpot:
     if 'audiobooks' in res:
       ins['audiobooks'] = CreSpot._iter(res['audiobooks']['items'], CreSpot.AudiobookSnippet, self._token, self._market)
       ins['total'] += len(ins['audiobooks'])
+    if 'playlists' in res:
+      ins['playlists'] = CreSpot._iter(res['playlists']['items'], CreSpot.Playlist, self._token, self._market)
+      ins['total'] += len(ins['audiobooks'])
     if 'chapters' in res:
       ins['chapters'] = CreSpot._iter(res['chapters']['items'], CreSpot.ChapterSnippet, self._token, self._market)
       ins['total'] += len(ins['chapters'])
