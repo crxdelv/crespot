@@ -1,6 +1,6 @@
 <h3 align="center"><code>Album</code> <kbd>Object</kbd></h3>
 
-An `Album` object contains 12 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`AlbumSnippet`](/crespot/snippet/album).
+An `Album` object contains 12 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`AlbumSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/album).
 
 ### `str: id`
 This is the ID of the album.
@@ -40,6 +40,6 @@ This is the artwork images of the album.
 
 ### Related links
 
-- [`ArtistSnippet`](/crespot/snippet/artist)
-- [`TrackSnippet`](/crespot/snippet/track)
-- [`Image`](/crespot/detail/image)
+- [`ArtistSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/artist)
+- [`TrackSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/track)
+- [`Image`](https://github.com/creuserr/crespot/tree/main/docs/detail/image)
