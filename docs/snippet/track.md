@@ -12,6 +12,7 @@ This snippet contains the following:
 7. `int: duration`
 8. `str: preview`
 9. `ArtistSnippet: artists`
+10. `list(str): markets`
 
 ### `get_real() -> Track` <kbd>:globe_with_meridians:</kbd>
 This method gets the actual class.
