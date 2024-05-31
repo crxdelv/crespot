@@ -1,7 +1,5 @@
-<!-- :thedocss: title crespot -->
-<!-- :thedocss: desc A python wrapper for Spotify API with no required authentication. -->
-
-> This document is available on [**thedocss**](https://thedocss.vercel.app/crespot). :sparkles:
+<h3 align="center">crespot</h3>
+<p align="center">A python wrapper for Spotify API with no required authentication. :musical_note:</p>
 
 ### :key: Must-read informations
 
@@ -85,7 +83,7 @@ This method creates a temporary access token that can be used at anything.
 
 This method updates the current token. This is useful for regenerating the token.
 
-If you're too lazy, just use `self._token = your_token`. 
+Under the hood, it's basically: `self._token = your_token`. 
 
 #### `get_genre_seeds() -> list(str)` <kbd>:globe_with_meridians:</kbd>
 
