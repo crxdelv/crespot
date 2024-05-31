@@ -24,7 +24,7 @@ This is the list of available markets of the show.
 This is the name of the show.
 
 ### `int: total`
-This is the total amount of episodes in the episodes.
+This is the total amount of episodes in the show.
 
 ### `str: type`
 This is the media type of the show.
