@@ -53,7 +53,7 @@ This object is special as it doesn't have its own snippet and it has track infor
 3. [`Owner`](https://github.com/creuserr/crespot/tree/main/docs/detail/owner) &ndash; This class contains the information of the playlist's owner.
 4. [`TrackInfo`](https://github.com/creuserr/crespot/tree/main/docs/detail/trackinfo) &ndash; This class contains the information that the track has inside the playlist. For example, it includes who added the track to the partylist.
 5. [`Copyright`](https://github.com/creuserr/crespot/tree/main/docs/detail/copyright) &ndash; This class contains the copyright information of the object.
-6. [`Error`](https://github.com/creuserr/crespot/tree/main/docs/detail/copyright) &ndash; This class contains the error status and its JSON response after an http request failed.
+6. [`Error`](https://github.com/creuserr/crespot/tree/main/docs/detail/copyright) &ndash; This class contains the error status and its JSON response. This class only can only appear when an HTTP request fails.
 
 ### Methods
 
