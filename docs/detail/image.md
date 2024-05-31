@@ -1,6 +1,6 @@
 <h3 align="center"><code>Image</code> <kbd>Detail</kbd></h3>
 
-An `Image` detail object contains 3 properties.
+An `Image` detail object contains 3 properties (excluding `_market` and `_token`).
 
 ### `int: width` <kbd>Nullable</kbd>
 This is the width of the image.
