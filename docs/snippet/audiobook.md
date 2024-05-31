@@ -1,6 +1,6 @@
-<h3 align="center"><code>ShowSnippet</code> <kbd>Simplified Object</kbd></h3>
+<h3 align="center"><code>AudiobookSnippet</code> <kbd>Simplified Object</kbd></h3>
 
-For the actual class, please refer to [`Show`](https://github.com/creuserr/crespot/tree/main/docs/group/show).
+For the actual class, please refer to [`Audiobook`](https://github.com/creuserr/crespot/tree/main/docs/group/audiobook).
 
 This snippet contains the following:
 1. `str: id`
@@ -14,8 +14,11 @@ This snippet contains the following:
 9. `int: total`
 10. `str: type`
 11. `list(str): markets`
+12. `list(str): authors`
+13. `list(str): narrators`
+14. `str: edition`
 
-### `get_real() -> Show` <kbd>:globe_with_meridians:</kbd>
+### `get_real() -> Audiobook` <kbd>:globe_with_meridians:</kbd>
 This method gets the actual class.
 
 ### Related links
