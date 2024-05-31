@@ -6,12 +6,11 @@ This snippet contains the following:
 1. `str: id`
 2. `str: external`
 3. `str: name`
-4. `int: number`
-5. `int: disc`
-6. `bool: explicit`
-7. `int: duration`
-8. `str: preview`
-9. `ArtistSnippet: artists`
+4. `str: type`
+5. `int: total`
+6. `str: date`
+8. `list(Image): images`
+9. `list(ArtistSnippet): artists`
 10. `list(str): markets`
 
 ### `get_real() -> Album` <kbd>:globe_with_meridians:</kbd>
@@ -20,3 +19,4 @@ This method gets the actual class.
 ### Related links
 
 - [`ArtistSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/artist.md)
+- [`Image`](https://github.com/creuserr/crespot/tree/main/docs/detail/image.md)
