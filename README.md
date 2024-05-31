@@ -23,7 +23,7 @@ from crespot import CreSpot
 ### Documentation
 
 **Constructor**
-- [`CreSpot`](https://github.com/creuserr/crespot/tree/main/docs/index.md.md) &ndash; If you're new, please read this document first.
+- [`CreSpot`](https://github.com/creuserr/crespot/tree/main/docs/index.md) &ndash; If you're new, please read this document first.
 
 **Singles**
 - [`Track`](https://github.com/creuserr/crespot/tree/main/docs/single/track.md)
