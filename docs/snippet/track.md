@@ -1,6 +1,6 @@
 <h3 align="center"><code>TrackSnippet</code> <kbd>Simplified Object</kbd></h3>
 
-For the actual class, please refer to [`Track`](https://github.com/creuserr/crespot/tree/main/docs/single/track).
+For the actual class, please refer to [`Track`](https://github.com/creuserr/crespot/tree/main/docs/single/track.md).
 
 This snippet contains the following:
 1. `str: id`
@@ -18,4 +18,4 @@ This method gets the actual class.
 
 ### Related links
 
-- [`ArtistSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/artist)
+- [`ArtistSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/artist.md)
