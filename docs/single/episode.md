@@ -27,13 +27,13 @@ This is the milliseconds duration of the episode.
 This is the first release date of the album. The format is `yyyy-mm-dd`.
 
 ### `str: preview` <kbd>Nullable</kbd>
-This is the audio preview url of the track.
+This is the audio preview url of the episode.
 
 ### `bool: explicit`
-This is true if the track is explicit.
+This is true if the episode is explicit.
 
 ### `bool: available`
-This is set to true if the track is available to the given market.
+This is set to true if the episode is available to the given market.
 
 ### `str: type`
 This is the media type of the show.
