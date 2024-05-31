@@ -1,6 +1,6 @@
 <h3 align="center"><code>Audiobook</code> <kbd>Object</kbd></h3>
 
-An `Audiobook` object contains 15 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`AudiobookSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/audiobook).
+An `Audiobook` object contains 15 properties (excluding `_market` and `_token`). For the snippet class, please refer to [`AudiobookSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/audiobook.md).
 
 ### `str: id`
 This is the ID of the audiobook.
@@ -49,6 +49,6 @@ This is the edition label of the audiobook.
 
 ### Related links
 
-- [`Copyright`](https://github.com/creuserr/crespot/tree/main/docs/detail/copyright)
-- [`ChapterSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/chapter)
-- [`Image`](https://github.com/creuserr/crespot/tree/main/docs/detail/image)
+- [`Copyright`](https://github.com/creuserr/crespot/tree/main/docs/detail/copyright.md)
+- [`ChapterSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/chapter.md)
+- [`Image`](https://github.com/creuserr/crespot/tree/main/docs/detail/image.md)
