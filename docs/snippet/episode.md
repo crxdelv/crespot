@@ -6,13 +6,13 @@ This snippet contains the following:
 1. `str: id`
 2. `str: description`
 3. `str: html_description`
-4. `list(Copyright): copyrights`
 5. `str: external`
-6. `list(Image): images`
-7. `str: publisher`
+7. `list(str): languages`
 8. `str: name`
-9. `int: total`
-10. `str: type`
+9. `int: duration`
+10. `bool: explicit`
+11. `list(str): markets`
+12. `str: date`
 
 ### `get_real() -> Episode` <kbd>:globe_with_meridians:</kbd>
 This method gets the actual class.
