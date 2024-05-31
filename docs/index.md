@@ -1,4 +1,4 @@
-<!-- :thedocss: remove blockquote:has([rel="nofollow"]):first-child -->
+<!-- :thedocss: remove blockquote:has([rel="nofollow"]) -->
 <!-- :thedocss: title crespot -->
 <!-- :thedocss: desc A python wrapper for Spotify API with no required authentication. -->
 
