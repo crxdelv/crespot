@@ -6,7 +6,7 @@
 1. `User` object is not included as it lacks of usage due to the unauthenticated access.
 2. Some properties are not added, such as `href` and `uri`.
 3. <kbd>Nullable</kbd> are properties that can be `None`, while <kbd>Undefinable</kbd> are properties that can not exist.
-4. <kbd>:globe_with_meridians:</kbd> badge signifies that the method uses http request(s.md).
+4. <kbd>:globe_with_meridians:</kbd> badge signifies that the method uses http requests.
 
 **Additional informations**
 
