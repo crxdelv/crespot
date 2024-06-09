@@ -30,7 +30,7 @@ Market is used to determine if the object is available. Markets are strings that
 *Spotify chose spain as the default value.*
 
 ### :nesting_dolls: Classes
-crespot has 20 classes, including all the snippets:
+crespot has 21 classes, including all the snippets:
 
 #### Objects
 
