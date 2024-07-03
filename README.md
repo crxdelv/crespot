@@ -1,5 +1,5 @@
 <h3 align="center">crespot</h3>
-<p align="center">Access spotify web api without authorization tokens</p>
+<p align="center">Access spotify web api without authorization tokens.</p>
 
 ```py
 token = CreSpot.create_token()
