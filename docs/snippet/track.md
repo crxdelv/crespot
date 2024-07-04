@@ -20,3 +20,5 @@ This method gets the actual class.
 ### Related links
 
 - [`ArtistSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/artist.md)
+
+<img src="https://komarev.com/ghpvc/?username=creuserr" alt="" width="0"></img>
