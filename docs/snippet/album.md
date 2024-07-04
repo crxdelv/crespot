@@ -20,3 +20,5 @@ This method gets the actual class.
 
 - [`ArtistSnippet`](https://github.com/creuserr/crespot/tree/main/docs/snippet/artist.md)
 - [`Image`](https://github.com/creuserr/crespot/tree/main/docs/detail/image.md)
+
+<img src="https://komarev.com/ghpvc/?username=creuserr" alt="" width="0"></img>
