@@ -31,3 +31,5 @@ And nothing else.
 #### :fallen_leaf: New feature update
 
 As I mentioned earlier, I do not allow additional stuffs except for properties and variables. However, if you would like to make a new feature, you should open an issue first.
+
+<img src="https://komarev.com/ghpvc/?username=creuserr" alt="" width="0"></img>
