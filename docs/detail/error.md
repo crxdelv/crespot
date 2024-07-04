@@ -7,3 +7,5 @@ This is the error status code of the request.
 
 ### `str: message`
 This is the error message of the request.
+
+<img src="https://komarev.com/ghpvc/?username=creuserr" alt="" width="0"></img>
