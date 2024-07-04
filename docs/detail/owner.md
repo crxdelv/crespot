@@ -13,3 +13,5 @@ This is the ID of the owner.
 
 ### `str: name` <kbd>Undefinable</kbd>
 This is the display name of the owner.
+
+<img src="https://komarev.com/ghpvc/?username=creuserr" alt="" width="0"></img>
