@@ -7,3 +7,5 @@ This is the copyright text.
 
 ### `str: type`
 This is the type of the copyright. `C` is the copyright, and `P` is the sound recording (performance) copyright.
+
+<img src="https://komarev.com/ghpvc/?username=creuserr" alt="" width="0"></img>
