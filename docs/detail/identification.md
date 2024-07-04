@@ -10,3 +10,5 @@ This is the **International Article Number** of the track.
 
 ### `str: upc` <kbd>Undefinable</kbd>
 This is the **Universal Product Code** of the track.
+
+<img src="https://komarev.com/ghpvc/?username=creuserr" alt="" width="0"></img>
