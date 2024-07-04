@@ -18,3 +18,5 @@ This snippet contains the following:
 
 ### `get_real() -> Episode` <kbd>:globe_with_meridians:</kbd>
 This method gets the actual class.
+
+<img src="https://komarev.com/ghpvc/?username=creuserr" alt="" width="0"></img>
