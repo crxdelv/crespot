@@ -59,3 +59,5 @@ from crespot import CreSpot
 This repository welcomes contributions from new developers. However, we should keep our contribution clean.
 
 For information about how to properly contribute to this repository, please refer to [CONTRIBUTING.md](https://github.com/creuserr/crespot/tree/main/CONTRIBUTING.md).
+
+<img src="https://komarev.com/ghpvc/?username=creuserr" alt="" width="0"></img>
