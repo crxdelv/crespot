@@ -142,3 +142,5 @@ This method returns an `Audiobook` object if the search is successful. Please be
 #### `get_chapter(str: chapter_id) -> Chapter` <kbd>:globe_with_meridians:</kbd>
 
 This method returns a `Chapter` object if the search is successful. Please be aware of the IDs because every objects has the same ID format but different instance.
+
+<img src="https://komarev.com/ghpvc/?username=creuserr" alt="" width="0"></img>
