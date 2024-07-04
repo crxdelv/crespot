@@ -25,3 +25,5 @@ This method gets the actual class.
 
 - [`Copyright`](https://github.com/creuserr/crespot/tree/main/docs/detail/copyright)
 - [`Image`](https://github.com/creuserr/crespot/tree/main/docs/detail/image)
+
+<img src="https://komarev.com/ghpvc/?username=creuserr" alt="" width="0"></img>
